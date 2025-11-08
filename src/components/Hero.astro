@@ -1,0 +1,177 @@
+---
+import PixelCharacter from './PixelCharacter.astro';
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Qualunque tecnologia sufficientemente avanzata è indistinguibile dalla magia.</h1>
+    <p class="hero-description">
+      
+    </p>
+    <div class="cta-buttons">
+      <button class="btn">whoami</button>
+      <button class="btn">ai</button>
+      <button class="btn">exp</button>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="mission-badge">w.i.p.</div>
+    <PixelCharacter />
+  </div>
+
+  <!-- Decorative pixel dots -->
+  <div class="pixel-dots dots-1">▓▓▓▓<br>▓▓▓▓</div>
+  <div class="pixel-dots dots-2">▓▓▓<br>▓▓▓<br>▓▓▓</div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 50px;
+    min-height: calc(100vh - 100px);
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 700px;
+  }
+
+  .hero-title {
+    font-size: 51px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 70px;
+    letter-spacing: 0px;
+    margin-top: -120px;
+  }
+
+  .hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+  }
+
+  .hero-description strong {
+    color: #0066FF;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 70px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #FFD700;
+    color: #000;
+    border: 4px solid #000;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    transition: all 0.2s;
+    box-shadow: 8px 8px 0px #000;
+  }
+
+  .btn:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0px #000;
+  }
+
+  .btn:active {
+    transform: translate(8px, 8px);
+    box-shadow: 0px 0px 0px #000;
+  }
+
+  .hero-visual {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .mission-badge {
+    border: 8px solid #000;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #FFD700;
+    position: relative;
+  }
+
+  .mission-badge::before,
+  .mission-badge::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #FFD700;
+    border: 4px solid #000;
+  }
+
+  .mission-badge::before {
+    top: -12px;
+    left: -12px;
+  }
+
+  .mission-badge::after {
+    bottom: -12px;
+    right: -12px;
+  }
+
+  .pixel-dots {
+    position: absolute;
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  .dots-1 {
+    top: 100px;
+    left: 45%;
+  }
+
+  .dots-2 {
+    bottom: 20%;
+    right: 10%;
+  }
+
+  @media (max-width: 1024px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero-title {
+      font-size: 48px;
+    }
+
+    .cta-buttons {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 40px 30px;
+    }
+
+    .hero-title {
+      font-size: 36px;
+    }
+
+    .mission-badge {
+      font-size: 18px;
+      padding: 15px 30px;
+    }
+  }
+</style>
+

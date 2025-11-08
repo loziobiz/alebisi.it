@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -15,16 +17,18 @@ const { title, description = "Sito personale di Alessandro Bisi" } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
   <body>
-    <main>
-      <slot />
-    </main>
+    <Header />
+    <slot />
   </body>
 </html>
 
-<style>
+<style is:global>
   * {
     margin: 0;
     padding: 0;
@@ -32,21 +36,14 @@ const { title, description = "Sito personale di Alessandro Bisi" } = Astro.props
   }
 
   html {
-    font-family: system-ui, sans-serif;
+    font-family: 'Courier New', monospace;
   }
 
   body {
+    background-color: #FFD700;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    overflow-x: hidden;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
   }
 </style>
-

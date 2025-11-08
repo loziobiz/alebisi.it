@@ -1,0 +1,18 @@
+{
+  "name": "alebisi-it",
+  "account_id": "af048e79f3aeb2c21a1b4d68ca42e409",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2025-01-27",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
+

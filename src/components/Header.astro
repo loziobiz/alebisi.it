@@ -1,0 +1,87 @@
+---
+// Componente Header con navigazione
+---
+
+<header>
+  <a href="/" class="logo">alebisi.it</a>
+  <!--nav>
+    <a href="/whoami">About</a>
+    <a href="#careers">Careers</a>
+    <a href="#media">Media</a>
+    <a href="#connect">Connect</a>
+    <a href="#blog">Blog</a>
+    <a href="/prj">Developers</a>
+    <span class="icon-bulb">💡</span>
+  </nav-->
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 4px solid #000;
+  }
+
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    font-family: "Press Start 2P", cursive;
+    color: #000;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+
+  .logo:hover {
+    transform: scale(1.05);
+  }
+
+  nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  nav a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s;
+  }
+
+  nav a:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+  }
+
+  .icon-bulb {
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 20px 30px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    nav {
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      font-size: 14px;
+    }
+
+    .logo {
+      font-size: 30px;
+    }
+  }
+</style>
+

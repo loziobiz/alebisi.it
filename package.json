@@ -7,7 +7,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && wrangler deploy",
+    "deploy:preview": "astro build && wrangler deploy --env preview"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -18,6 +20,8 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0"
+    "@astrojs/cloudflare": "^12.6.10",
+    "@types/node": "^22.0.0",
+    "wrangler": "^4.46.0"
   }
 }
