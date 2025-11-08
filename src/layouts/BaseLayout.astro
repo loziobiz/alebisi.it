@@ -47,4 +47,16 @@ const { title, description = "Sito personale di Alessandro Bisi" } = Astro.props
     overflow-x: hidden;
     min-height: 100vh;
   }
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    html {
+      font-size: 13px;
+    }
+  }
 </style>
