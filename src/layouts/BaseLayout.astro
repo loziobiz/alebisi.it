@@ -13,15 +13,35 @@ const { title, description = "Sito personale di Alessandro Bisi" } = Astro.props
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Inline Critical CSS for instant rendering -->
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box}
+      html{font-family:'Courier New',monospace}
+      body{background-color:#FFD700;color:#000;font-family:'Courier New',monospace;overflow-x:hidden;min-height:100vh}
+    </style>
+    
+    <!-- Preconnect for fonts (non-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Load font ASYNC - non-blocking -->
+    <link 
+      rel="stylesheet" 
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" 
+      media="print" 
+      onload="this.media='all';this.onload=null;" 
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    </noscript>
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="https://fonts.gstatic.com/s/pressstart2p/v14/e3t4euO8O-5NI1vF_S-Q5FpbKQv6JVXa1A.woff2" as="font" type="font/woff2" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-    <title>{title}</title>
   </head>
   <body>
     <Header />
@@ -30,24 +50,7 @@ const { title, description = "Sito personale di Alessandro Bisi" } = Astro.props
 </html>
 
 <style is:global>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    font-family: 'Courier New', monospace;
-  }
-
-  body {
-    background-color: #FFD700;
-    color: #000;
-    font-family: 'Courier New', monospace;
-    overflow-x: hidden;
-    min-height: 100vh;
-  }
-
+  /* Responsive font sizing */
   @media (max-width: 768px) {
     html {
       font-size: 14px;
