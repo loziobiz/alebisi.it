@@ -6,9 +6,28 @@ description: Una pagina di test per verificare che MDX funziona
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <div class="max-w-4xl mx-auto p-8">
     <h1 class="text-4xl font-bold mb-8 text-center">Test MDX con Tailwind</h1>
+
+    <div class="prose prose-lg max-w-none mb-8">
+      # Titolo di esempio
+
+      Questo è un **titolo markdown** inserito direttamente nel contenuto MDX!
+
+      ## Sottotitolo H2
+
+      Ecco una lista di esempio:
+      - Elemento 1
+      - Elemento 2 con **testo grassetto**
+      - Elemento 3 con `codice inline`
+
+      > Questa è una citazione elegante!
+
+      ### Sottotitolo H3
+
+      E un paragrafo normale con un [link di esempio](https://astro.build).
+    </div>
 
     <div class="bg-yellow-100 p-6 rounded-lg shadow-lg mb-8">
       <h2 class="text-2xl font-semibold mb-4">Funzionalità MDX</h2>

@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@astrojs/cloudflare": "^12.6.10",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^22.0.0",
     "wrangler": "^4.46.0"
   }
