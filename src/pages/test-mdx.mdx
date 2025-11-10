@@ -1,0 +1,54 @@
+---
+title: Test MDX
+description: Una pagina di test per verificare che MDX funziona
+---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+<BaseLayout title={title} description={description}>
+  <div class="max-w-4xl mx-auto p-8">
+    <h1 class="text-4xl font-bold mb-8 text-center">Test MDX con Tailwind</h1>
+
+    <div class="bg-yellow-100 p-6 rounded-lg shadow-lg mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Funzionalità MDX</h2>
+      <p class="mb-4">
+        Questa pagina dimostra che MDX funziona correttamente.
+        Puoi scrivere **markdown** normale e anche **componenti JSX**!
+      </p>
+
+      <ul class="list-disc list-inside mb-4">
+        <li>Markdown standard</li>
+        <li>Componenti React/Astro</li>
+        <li>Tailwind CSS per lo styling</li>
+        <li>Sintassi JSX</li>
+      </ul>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-blue-100 p-4 rounded">
+        <h3 class="font-bold mb-2">Colonna 1</h3>
+        <p>Contenuto della prima colonna con stili Tailwind.</p>
+      </div>
+
+      <div class="bg-green-100 p-4 rounded">
+        <h3 class="font-bold mb-2">Colonna 2</h3>
+        <p>Contenuto della seconda colonna con responsive design.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 p-6 bg-gray-100 rounded-lg">
+      <h2 class="text-xl font-semibold mb-4">Codice di esempio</h2>
+      <pre class="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto">
+        <code>{`// Questo è codice JSX in MDX
+function HelloWorld() {
+  return (
+    <div className="text-center">
+      <h1>Hello World!</h1>
+    </div>
+  );
+}`}</code>
+      </pre>
+    </div>
+  </div>
+</BaseLayout>

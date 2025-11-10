@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
+import tailwindcss from '@tailwindcss/vite';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,11 +14,13 @@ export default defineConfig({
     assetsPrefix: undefined,
   },
   vite: {
+    plugins: [tailwindcss()],
     build: {
       minify: 'terser',
       cssMinify: true,
       cssCodeSplit: false, // Un solo file CSS invece di multiple chunks
     },
   },
+  integrations: [mdx()],
 });
 
